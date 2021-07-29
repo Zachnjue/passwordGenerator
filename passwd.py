@@ -1,5 +1,6 @@
 import random
 import string
+import secrets
 
 print('hello, Welcome to Password generator')
 
@@ -15,10 +16,10 @@ symbols = string.punctuation
 # combine the data
 all = lower + upper + num + symbols
 
-# use random
-temp = random.sample(all, length)
+# use secrets
+#temp = secrets.choice(all) for i in range(length)
 
 # create the password
-password = "".join(temp)
+password = "".join(secrets.choice(all) for i in range(length))
 
 print(password)
